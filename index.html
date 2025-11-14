@@ -1,18 +1,101 @@
 <!DOCTYPE html>
-<!-- saved from url=(0020)https://xecades.xyz/ -->
-<html lang="zh-cn" class="sr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <link rel="icon" href="https://xecades.xyz/favicon.ico">
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xecades</title>
-  <script type="module" crossorigin="" src="./Xecades_files/index-BVgU8crw.js"></script>
-  <link rel="stylesheet" crossorigin="" href="./Xecades_files/index-DblY-GXs.css">
+    <title>Hello World 网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem 4rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-out;
+            max-width: 90%;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .decoration {
+            margin: 2rem 0;
+            font-size: 2rem;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 2rem;
+            }
+        }
+    </style>
 </head>
-
-<body style="height: 100%;">
-    <div id="global-background"></div>
-    <div id="app" data-v-app=""><div class="layout" id="main"><h1 class="title rv" data-sr-id="1" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: all, opacity 0.4s cubic-bezier(0.5, 0, 0, 1), transform 0.4s cubic-bezier(0.5, 0, 0, 1);">你好。</h1><div class="subtitle rv indent" data-sr-id="3" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: all, opacity 0.4s cubic-bezier(0.5, 0, 0, 1), transform 0.4s cubic-bezier(0.5, 0, 0, 1);">我是 Xecades，</div><div class="body"><p class="rv indent" data-sr-id="4" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: all, opacity 0.4s cubic-bezier(0.5, 0, 0, 1), transform 0.4s cubic-bezier(0.5, 0, 0, 1);"><ruby data-v-31cf0f93=""><rb data-v-31cf0f93="" class="">“Xecades”</rb><rt data-v-31cf0f93="" class="">/'zɛkeɪdz/</rt></ruby> 是我广泛使用的网名，通过键入它，你可以在互联网上找到所有我的<a data-v-4e539c2b="" href="https://xecades.xyz/about" class="cursor"><ruby data-v-31cf0f93=""><rb data-v-31cf0f93="" class="">踪迹</rb><rt data-v-31cf0f93="" class="">/about</rt></ruby></a>。</p><p class="rv indent" data-sr-id="5" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: all, opacity 0.4s cubic-bezier(0.5, 0, 0, 1), transform 0.4s cubic-bezier(0.5, 0, 0, 1);">我是一名大三学生，就读于<a data-v-4e539c2b="" href="http://ckc.zju.edu.cn/" target="_blank" class="cursor"><ruby data-v-31cf0f93=""><rb data-v-31cf0f93="" class="">浙江大学竺可桢学院</rb><rt data-v-31cf0f93="" class="">Chu Kochen Honors College</rt></ruby></a>，目前在浙江大学 CAD&amp;CG 国家重点实验室实习，研究兴趣为 CV 方向。如果你恰好也是这个学校的学生，欢迎来图灵 2302 班找我。</p><p class="rv indent" data-sr-id="6" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: all, opacity 0.4s cubic-bezier(0.5, 0, 0, 1), transform 0.4s cubic-bezier(0.5, 0, 0, 1);">我会在<a data-v-4e539c2b="" href="https://blog.xecades.xyz/" target="_blank" class="cursor"><ruby data-v-31cf0f93=""><rb data-v-31cf0f93="" class="">博客</rb><rt data-v-31cf0f93="" class="">/blog</rt></ruby></a>上记录我感兴趣的内容，也会记录自己的学习<a data-v-4e539c2b="" href="https://note.xecades.xyz/" target="_blank" class="cursor"><ruby data-v-31cf0f93=""><rb data-v-31cf0f93="" class="">笔记</rb><rt data-v-31cf0f93="" class="">/note</rt></ruby></a>。有时，我会开发一些有趣的<a data-v-4e539c2b="" href="https://xecades.xyz/lab" class="cursor"><ruby data-v-31cf0f93=""><rb data-v-31cf0f93="" class="">项目</rb><rt data-v-31cf0f93="" class="">/lab</rt></ruby></a>。我乐于邂逅<a data-v-4e539c2b="" href="https://xecades.xyz/friend" class="cursor"><ruby data-v-31cf0f93=""><rb data-v-31cf0f93="" class="">有趣的灵魂</rb><rt data-v-31cf0f93="" class="">/friend</rt></ruby></a>，他们带给了我许多新的思考，伴随着我的<a data-v-4e539c2b="" href="https://xecades.xyz/timeline" class="cursor"><ruby data-v-31cf0f93=""><rb data-v-31cf0f93="" class="">成长</rb><rt data-v-31cf0f93="" class="">/timeline</rt></ruby></a>。</p></div></div></div>
-<script defer="" src="./Xecades_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;74f4943bdb7c45ecb3f019b5cfc864d2&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
-
-
-<div id="cursor" class="active" style="left: 987.7px; top: 527.5px;"></div></body></html>
+<body>
+    <div class="container">
+        <h1>Hello World!</h1>
+        <div class="subtitle">欢迎来到我的第一个网站</div>
+        <div class="decoration">🌍✨</div>
+        <p>这是一个简单的Hello World页面，使用HTML和CSS创建</p>
+    </div>
+</body>
+</html>
