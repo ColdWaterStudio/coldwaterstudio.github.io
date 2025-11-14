@@ -12,7 +12,6 @@
             padding: 0;
             box-sizing: border-box;
               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        /*    font-family:Helvetica,Arial,メイリオ,meiryo,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,sans-serif;  */
         }
         
         :root {
@@ -363,68 +362,9 @@
         .social-links a:hover {
             color: var(--secondary);
         }
-        
-        /* 响应式设计 */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-            
-            .timeline:before {
-                left: 30px;
-            }
-            
-            .timeline-content {
-                width: calc(100% - 80px);
-                margin-left: 80px !important;
-            }
-            
-            .timeline-date {
-                left: 0 !important;
-                right: auto !important;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                transition: left 0.3s ease;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-        }
+
     </style>
-</head>
+</head> 
 <body>
     <!-- 导航栏 -->
     <header>
@@ -471,12 +411,12 @@
   <!--                <a href="#" class="btn" style="margin-top: 20px;">下载简历</a>
                 </div>
                 <div class="about-img">
-                     <img src="ColdWaterStudio_files/DSCF4026.JPG" alt="A" class="profile-img">
+                     <img src="ColdWaterStudio_files/DSCF4026.JPG" alt="A" class="profile-img"> -->
                 </div>
             </div>
         </div>
     </section>
--->
+
 
     <!-- 经验部分 -->
     <section id="experience">
@@ -484,29 +424,41 @@
             <h2>学习经历</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2023 - 至今</div>
+                    <div class="timeline-date">2024 - 至今</div>
                     <div class="timeline-content">
                         <h3>ColdWaterStudio</h3>
                         <h4>位于江苏苏州。承接翻唱贴混，分轨混音、影视后期声音设计等项目</h4>
   <!--                       <p>主要设备：Genlec 8330A ；Focal alpha Evo 50；Focusrite 8i6；SE 8 Pair；GLM</p>  -->
                     </div>
                 </div>
+
                 <div class="timeline-item">
-                    <div class="timeline-date">2022 - 2023</div>
+                    <div class="timeline-date">2022 - 2024</div>
                     <div class="timeline-content">
                         <h3>录音、调音</h3>
                         <h4>现场Live、同期录制</h4>
                         <p>曾长期参与苏州星船知音的演出设备调试，户外路演经历</p>
                     </div>
                 </div>
+
                 <div class="timeline-item">
-                    <div class="timeline-date">2015 - 2022</div>
+                    <div class="timeline-date">2020 - 2022</div>
                     <div class="timeline-content">
                         <h3>HOME STUDIO</h3>
                         <h4>家庭录音工作室，主要录制吉他、贝司</h4> 
    <!--                       <p>设备：SE 8 Pair；AKG P120；Focusrite Solo3；Presonus E5XT</p>  -->
                     </div>
                 </div>
+
+                 <div class="timeline-item">
+                    <div class="timeline-date">2013 - 2020</div>
+                    <div class="timeline-content">
+                        <h3>吉他乐手</h3>
+                        <h4>古典吉他、指弹吉他</h4>
+                        <p>1</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -518,19 +470,19 @@
             <div class="skills-container">
                 <div class="skill-card">
                     <i class="fas fa-code"></i>
-                    <h3>下等马 by 银河nakimi</h3>
+                    <h3>下等马 by 银河Nakimi</h3>
                     <p>贴唱翻混</p>
                      <audio src="ColdWaterStudio_files/xiadengma.mp3" controls></audio>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-paint-brush"></i>
-                    <h3>1</h3>
+                    <h3>标题</h3>
                     <p>贴唱翻混</p>
                     <audio src="" controls></audio>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-mobile-alt"></i>
-                    <h3>1</h3>
+                    <h3>标题</h3>
                     <p>2</p>
                 </div>
             </div>
@@ -545,9 +497,10 @@
                 <div class="about-text">
                     <p>主监听：Genlec 8330A With GLM；</p>
                     <p>吉他：Avian 4A se；Kepma A1、B1、F0；手工古典（白松）</p>
+                    <p>键盘：Arturia MiniLab 3</p>
                     <p>拾音器：Lim 三代主动；Lim被动+PreAmp；Double X2</p>
-                    <p>硬件：KT 1176压缩；不知名晶体管话放x1；Focusrite 8i6声卡;Faderport电动推子</p>
-                    <p>软件：Protools Native；Plugin Alliance All Products；UAD Spark；Fabfilter All Products</p>
+                    <p>硬件：KT 1176压缩；不知名晶体管话放x1；Focusrite 8i6声卡；Faderport电动推子</p>
+                    <p>软件：Protools Native；Plugin Alliance All Products；UAD Spark；Valhalla All Products；Fabfilter All Products</p>
                     <p>麦克风：SE 8 小振膜 一对（乐器）；AKG P120（人声）</p>
                     <p>耳机：铁三角M20X；</p>
                     <p>对比音箱：Focal Alpha Evo 50；Presonus E5XT；M3PlusX</p>
@@ -556,16 +509,16 @@
             </div>
         </div>
     </section>
-                    
 
-         <!-- 关于部分 -->
+
+         <!-- 价格部分 -->
     <section id="price">
         <div class="container">
             <h2>价格表</h2>
             <div class="about-content">
                 <div class="about-text"></div>
   <!--              <img src="ColdWaterStudio_files/Price202511.png" alt="A" class="about-img">   -->
-                    <p>暂未完工</p>
+                    <p>暂未完工，请私聊报价</p>
                  </div>
             </div>
         </div>
@@ -593,31 +546,15 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>           </p>
+                        <i class="fas fa-phone"></i>           
+</p>
                         <div>
-                            <h3>QQ
-                            </h3>
+                            <h3>QQ</h3>
                             <p>569678725 (早10点～晚9点)</p>
                         </div>
                     </div>
                 </div>
-<!-- <p>                 <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="您的姓名" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="您的邮箱" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="主题" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="您的消息" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">发送消息</button>
-                    </form>
-                </div>     </p> --> 
+
             </div>  
         </div>
     </section>
@@ -626,9 +563,7 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://space.bilibili.com/1417849065"><i class="fab fa-bilibili"></i></a>
                 <a href="#"><i class="fab fa-weibo"></i></a>
             </div>
             <p>&copy; 2025 ColdWaterStudio.</p>
