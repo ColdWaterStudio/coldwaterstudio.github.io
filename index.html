@@ -176,15 +176,78 @@
             border-top: 1px solid #f0f0f0;
         }
 
-        /* 响应式 */
+        /* 响应式 
         @media (max-width: 768px) {
             .hero-title { font-size: 3rem; }
             nav { padding: 1.5rem 2rem; }
             .nav-links { display: none; }
+        }       */
+
+                       /* 响应式设计 */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+            }
+            
+            .timeline-date {
+                left: 0 !important;
+                right: auto !important;
+            }
         }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }  
+
     </style>
 </head>
 <body>
+
+    
 
     <nav>
         <div class="logo">梦想家园</div>
@@ -225,11 +288,11 @@
     <section class="section" id="about">
         <div class="section-header">
             <span class="section-num">01 / CONCEPT</span>
-            <h2 class="section-title">A<br>B</h2>
+            <h2 class="section-title">在这里，<br>续写你的生活。</h2>
         </div>
         <div style="max-width: 600px;">
             <p style="line-height: 2; color: #555;">
-               小标题小标题小标题小标题小标题
+               写点什么
         </div>
     </section>
 
@@ -240,12 +303,12 @@
         </div>
         <div class="card-grid">
             <div class="card">
-                <h3>大标题大标题大标题大标题大标题</h3>
-                <p>小标题小标题小标题小标题小标题</p>
+                <h3>A</h3>
+                <p>B</p>
             </div>
             <div class="card">
-                <h3>大标题大标题大标题大标题大标题</h3>
-                <p>小标题小标题小标题小标题小标题</p>
+                <h3>大标题</h3>
+                <p>小标题</p>
             </div>
             <div class="card">
                 <h3>原生体验</h3>
@@ -270,7 +333,7 @@
         <p>&copy; 2026 Dream Home Server. Crafted with JimoWasTaken.</p>
     </footer>
 
-    <script>
+     <script>
         // 移动端菜单切换
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
