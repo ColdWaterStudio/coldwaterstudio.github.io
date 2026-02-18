@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梦想家园 | Dream Home Minecraft Server</title>
+    <!-- 引入日系感较强的字体 -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --text-color: #2d2d2d;
+            --accent-color: #e63946; /* 朱红色，点睛之笔 */
+            --sub-text: #888;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* 导航栏 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            box-sizing: border-box;
+            z-index: 100;
+            background: rgba(252, 252, 252, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.2em;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 5rem;
+            line-height: 1.2;
+            margin: 0;
+            writing-mode: vertical-rl; /* 现代日式竖排文字 */
+            letter-spacing: 0.1em;
+        }
+
+        .hero-subtitle {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: var(--sub-text);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        /* 装饰背景圆圈
+        .circle-decoration {
+            position: absolute;
+            right: -100px;
+            top: 20%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            z-index: 1;
+        }           */
+
+
+        /* 内容板块 */
+        .section {
+            padding: 10rem 10%;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-num {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--sub-text);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* 加入按钮 */
+        .cta-btn {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 1.2rem 3rem;
+            background: var(--text-color);
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent-color);
+        }
+
+        footer {
+            padding: 4rem 10%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--sub-text);
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            nav { padding: 1.5rem 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">梦想家园</div>
+        <div class="nav-links">
+            <a href="#about">关于</a>
+            <a href="#features">特色</a>
+            <a href="#railway">轨道交通</a>
+            <a href="changelog.html">更新日志</a>
+            <a href="#join">加入</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="circle-decoration"></div>
+        <div class="hero-content">
+          <div style="
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    z-index: -100; 
+    overflow: hidden;">
+    
+    <img src="Pic1.png" alt="背景" style="
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+        filter: brightness(0.9); /* 稍微调暗，突出文字 */
+    ">
+</div>
+            <h1 class="hero-title">梦中的世界</h1>
+            <p class="hero-subtitle">Dream Home Minecraft Server</p>
+            <a href="#join" class="cta-btn">立即开始探索</a>
+        </div>
+    </div>
+
+    <section class="section" id="about">
+        <div class="section-header">
+            <span class="section-num">01 / CONCEPT</span>
+            <h2 class="section-title">在这里，<br>续写你的生活。</h2>
+        </div>
+        <div style="max-width: 600px;">
+            <p style="line-height: 2; color: #555;">
+                “梦想家园”不仅是一个服务器，它是每一个建筑师、冒险家心灵的归宿。我们推崇极简主义与宁静的游戏氛围，让每一块方块的堆叠都充满仪式感。
+            </p>
+        </div>
+    </section>
+
+    <section class="section" id="features" style="background: #fff;">
+        <div class="section-header">
+            <span class="section-num">02 / FEATURES</span>
+            <h2 class="section-title">世界特色</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <h3>生存与秩序</h3>
+                <p>严格的领地系统与和谐的社区环境，保护你的每一份创意不被侵犯。</p>
+            </div>
+            <div class="card">
+                <h3>现代建筑奖</h3>
+                <p>定期举办建筑大赛，优秀的现代风格作品将获得全服展示与奖励。</p>
+            </div>
+            <div class="card">
+                <h3>原生体验</h3>
+                <p>在保持原汁原味生存的基础上，加入防熊备份和快速潜影箱功能。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="join">
+        <div class="section-header">
+            <span class="section-num">03 / JOIN US</span>
+            <h2 class="section-title">加入我们</h2>
+        </div>
+        <div class="card">
+            <p>服务器地址: <code>play.craftmine188.top</code></p>
+            <p>版本支持: Java Edition 1.21.11</p>
+            <p>官方交流群: 559182092</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Dream Home Server. Crafted with JimoWasTaken.</p>
+    </footer>
+
+</body>
+</html>

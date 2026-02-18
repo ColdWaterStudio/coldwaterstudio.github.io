@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更新日志 | 梦想家园 Dream Home</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --text-color: #2d2d2d;
+            --accent-color: #e63946;
+            --line-color: #e0e0e0;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+        }
+
+        /* 顶部导航 */
+        nav {
+            padding: 2rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--line-color);
+        }
+
+        .nav-brand {
+            font-family: 'Noto Serif JP', serif;
+            text-decoration: none;
+            color: var(--text-color);
+            letter-spacing: 0.2em;
+        }
+
+        /* 页面标题区 */
+        .header {
+            padding: 6rem 10% 2rem;
+            display: flex;
+            align-items: flex-end;
+            gap: 2rem;
+        }
+
+        .header h1 {
+            writing-mode: vertical-rl;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 0.1em;
+        }
+
+        .header-en {
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            color: #999;
+            transform: rotate(90deg);
+            transform-origin: left bottom;
+            white-space: nowrap;
+        }
+
+        /* 更新日志列表容器 */
+        .changelog-container {
+            padding: 4rem 10% 10rem;
+            max-width: 800px;
+        }
+
+        .log-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 5rem;
+            border-left: 1px solid var(--line-color);
+        }
+
+        /* 装饰圆点 */
+        .log-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0.5rem;
+            width: 9px;
+            height: 9px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .log-date {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .log-version {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.8rem;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .log-content {
+            background: #fff;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .log-content h4 {
+            margin-top: 0;
+            font-size: 1rem;
+            border-left: 3px solid var(--text-color);
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .log-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .log-content li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .log-content li::before {
+            content: "・";
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        footer {
+            padding: 4rem 10%;
+            border-top: 1px solid var(--line-color);
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
+            .changelog-container { padding: 4rem 5% 5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-brand">夢想家園</a>
+        <div style="font-size: 0.8rem;">BACK TO HOME</div>
+    </nav>
+
+    <header class="header">
+        <h1>更新履歴</h1>
+        <span class="header-en">CHANGELOG</span>
+    </header>
+
+    <main class="changelog-container">
+
+
+        <!-- 更新条目 1 -->
+        <article class="log-item">
+            <span class="log-date">约2021～20220303</span>
+            <h2 class="log-version">最初的一场梦</h2>
+            <div class="log-content">
+                <h4>[ 管理更新 ]</h4>
+                <ul>
+                    <li>初代服务器，由玩家“FangMU”管理</li>
+                    <li>技术顾问由服务商“StarlingChoud”担任</li>
+                    <li>版本为1.18.1，纯公益性质。</li>
+                <h4>[ 最后的记忆 ]</h4>
+                    <li>由于“FangMu”资金不足，无法续费。存档没有得到保留。</li>
+                    <li>如同一场梦般消散</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 更新条目 2 -->
+        <article class="log-item">
+            <span class="log-date">20220119</span>
+            <h2 class="log-version">重生.....?</h2>
+            <div class="log-content">
+                <h4>[ 管理更新 ]</h4>
+                <li>服务器管理权由玩家"JimoWasTaken"担任</li>
+                <li>采用包年租赁的腾讯云服务器</li>
+                <h4>[ 内容更新 ]</h4>
+                <ul>
+                    <li>核心升级至 Minecraft 1.18.2。</li>
+                    <li>重新开始。</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- 更新条目 3 -->
+        <article class="log-item">
+            <span class="log-date">2025.01.21</span>
+            <h2 class="log-version">梦想扬帆启航</h2>
+            <div class="log-content">
+                 <h4>[ 管理更新 ]</h4>
+                 <li>管理权由玩家"wintermine"担任</li>
+                 <li>技术顾问由玩家"JimoWasTaken"担任</li>
+                 <li>采用包月租赁的服务商服务器</li>
+                 <h4>[ 内容更新 ]</h4>
+                <li>核心升级至 Minecraft 1.21.4</li>
+                <li>白名单与QB备份系统上线，再也不怕熊孩子了。</li>
+                <li>mod更新：地毯全家桶、投影打印机、锂</li>
+            </div>
+        </article>
+
+        <!-- 更新条目 4 -->
+        <article class="log-item">
+            <span class="log-date">2025.07.24</span>
+            <h2 class="log-version">坚实的后盾</h2>
+            <div class="log-content">
+                 <h4>[ 管理更新 ]</h4>
+                 <li>管理权、技术顾问由玩家"JimoWasTaken"担任</li>
+                 <li>采用JM家的土豆🥔服务器，再也不怕丢存档</li>
+                 <h4>[ 内容更新 ]</h4>
+                <li>核心升级至 Minecraft 1.21.6</li>
+                <li>PB（增量）备份系统上线，存档安全有保障</li>
+                <li>mod更新：快捷潜影箱</li>
+            </div>
+        </article>
+
+         <!-- 更新条目 5 -->
+        <article class="log-item">
+            <span class="log-date">2025.11.10</span>
+            <h2 class="log-version">我们需要更多性能</h2>
+            <div class="log-content">
+                 <h4>[ 硬件更新 ]</h4>
+                 <li>换了更强大的INTEL 第7代平台</li>
+                 <li>换了更强大的32G运行内存与480G专用高速固态硬盘</li>
+                 <h4>[ 内容更新 ]</h4>
+                <li>核心升级至 Minecraft 1.21.10</li>
+                <li>防熊技术更新</li>
+
+            </div>
+        </article>
+
+        <h2 class="log-version">腐竹有话说</h2>
+            <h3>我曾有一个梦，梦见一个新的世界</h3>
+            <h3>在那里，我们没有失散的烦恼</h3>
+            <h3>每个人都可以自由地建造、游玩</h3>
+            <h3></h3>
+            <h3>纯公益、赞助制的形式，注定会投入巨大</h3>
+            <h3>但笔者会一直守候下去</h3>
+            <h3>让梦想伴你直到记忆的尽头。</h3>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026梦想家园. 我们梦想的痕迹.</p>
+    </footer>
+
+</body>
+</html>
