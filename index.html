@@ -24,41 +24,26 @@
             scroll-behavior: smooth;
         }
 
- /* --- 导航栏优化 --- */
+        /* 导航栏 */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            height: 70px; /* 固定高度方便计算 */
+            height: 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 4rem;
+            padding: 2rem 4rem;
             box-sizing: border-box;
-            z-index: 1000;
+            z-index: 100;
             background: rgba(252, 252, 252, 0.8);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
         }
 
         .logo {
             font-family: 'Noto Serif JP', serif;
             font-size: 1.5rem;
             letter-spacing: 0.2em;
-            white-space: nowrap;
-        }
-
-          /* 移动端菜单开关 */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 6px;
-        }
-        .menu-toggle span {
-            width: 25px;
-            height: 2px;
-            background-color: var(--text-color);
-            transition: 0.3s;
         }
 
         .nav-links a {
@@ -191,88 +176,18 @@
             border-top: 1px solid #f0f0f0;
         }
 
-        /* 响应式 
+        /* 响应式 */
         @media (max-width: 768px) {
             .hero-title { font-size: 3rem; }
             nav { padding: 1.5rem 2rem; }
             .nav-links { display: none; }
         }
-*/
-               /* 响应式设计 */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-            
-            .timeline:before {
-                left: 30px;
-            }
-            
-            .timeline-content {
-                width: calc(100% - 80px);
-                margin-left: 80px !important;
-            }
-            
-            .timeline-date {
-                left: 0 !important;
-                right: auto !important;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                transition: left 0.3s ease;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-        }  
-
-    
     </style>
 </head>
 <body>
 
-    
-
     <nav>
         <div class="logo">梦想家园</div>
-           <!-- 移动端汉堡菜单图标 -->
-        <div class="menu-toggle" weight=100px height=100px id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-         </div>
         <div class="nav-links">
             <a href="#about">关于</a>
             <a href="#features">特色</a>
@@ -314,7 +229,7 @@
         </div>
         <div style="max-width: 600px;">
             <p style="line-height: 2; color: #555;">
-               小标题小标题小标题小标题
+               小标题小标题小标题小标题小标题
         </div>
     </section>
 
@@ -325,12 +240,12 @@
         </div>
         <div class="card-grid">
             <div class="card">
-                <h3>大标题大标题大标题大标题</h3>
-                <p>小标题小标题小标题小标题</p>
+                <h3>大标题大标题大标题大标题大标题</h3>
+                <p>小标题小标题小标题小标题小标题</p>
             </div>
             <div class="card">
-                <h3>大标题大标题大标题大标题</h3>
-                <p>小标题小标题小标题小标题</p>
+                <h3>大标题大标题大标题大标题大标题</h3>
+                <p>小标题小标题小标题小标题小标题</p>
             </div>
             <div class="card">
                 <h3>原生体验</h3>
@@ -355,23 +270,5 @@
         <p>&copy; 2026 Dream Home Server. Crafted with JimoWasTaken.</p>
     </footer>
 
- <script>
-        // 移动端菜单切换逻辑
-        const menuToggle = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            // 可选：给汉堡菜单加个简单的动画效果
-            this.classList.toggle('is-active');
-        });
-
-        // 点击链接后自动收起菜单
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
 </body>
 </html>
