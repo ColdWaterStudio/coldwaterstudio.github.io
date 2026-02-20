@@ -3,247 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>更新日志 | 城市轨道交通系统</title>
+    <title>梦想家园 | Dream Home Minecraft Server</title>
+    <!-- 引入字体 -->
     <link href="https://fonts.googleapis.com" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f8f9fa;
-            --text-color: #2c3e50;
-            --accent-color: #1a3a5a; /* 轨道交通常用的深蓝色 */
-            --sub-accent: #3498db;
-            --line-color: #d1d8e0;
+            --bg-color: #fcfcfc;
+            --text-color: #2d2d2d;
+            --accent-color: #e63946; /* 朱红色，点睛之笔 */
+            --sub-text: #888;
         }
 
-        body {
+        body, html {
             margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Noto Sans SC', sans-serif;
-            line-height: 1.8;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* 顶部导航 */
+        /* 导航栏 */
         nav {
-            padding: 1.5rem 10%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--line-color);
-            background: rgba(255,255,255,0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
+            padding: 2rem 4rem;
+            box-sizing: border-box;
             z-index: 100;
+            background: rgba(252, 252, 252, 0.8);
+            backdrop-filter: blur(5px);
         }
 
-        .nav-brand {
-            font-family: 'Noto Serif SC', serif;
+        .logo {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.2em;
+        }
+
+        .nav-links a {
             text-decoration: none;
             color: var(--text-color);
-            letter-spacing: 0.15em;
-            font-weight: 700;
+            margin-left: 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        /* 页面标题区 */
-        .header {
-            padding: 5rem 10% 2rem;
-            display: flex;
-            align-items: flex-end;
-            gap: 2rem;
-        }
-
-        .header h1 {
-            writing-mode: vertical-rl;
-            font-family: 'Noto Serif SC', serif;
-            font-size: 3.5rem;
-            margin: 0;
-            letter-spacing: 0.1em;
+        .nav-links a:hover {
             color: var(--accent-color);
         }
 
-        .header-en {
-            font-size: 0.8rem;
-            letter-spacing: 0.4em;
-            color: #aaa;
-            transform: rotate(90deg);
-            transform-origin: left bottom;
-            white-space: nowrap;
-            text-transform: uppercase;
-        }
-
-        /* 更新日志容器 */
-        .changelog-container {
-            padding: 2rem 10% 8rem;
-            max-width: 900px;
-        }
-
-        .log-item {
+        /* Hero 区域 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
             position: relative;
-            padding-left: 3rem;
-            margin-bottom: 6rem;
-            border-left: 2px solid var(--line-color);
         }
 
-        /* 轨道节点效果 */
-        .log-item::before {
-            content: '';
-            position: absolute;
-            left: -9px;
-            top: 0.5rem;
-            width: 16px;
-            height: 16px;
-            background: #fff;
-            border: 4px solid var(--accent-color);
-            border-radius: 50%;
+        .hero-content {
             z-index: 2;
         }
 
-        .log-date {
-            font-size: 1rem;
-            color: var(--sub-accent);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            display: block;
-            font-family: monospace;
-        }
-
-        .log-version {
-            font-family: 'Noto Serif SC', serif;
-            font-size: 2rem;
-            margin: 0 0 1.5rem 0;
-            color: var(--accent-color);
-        }
-
-        .log-content {
-            background: #fff;
-            padding: 2.5rem;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            border-radius: 4px;
-        }
-
-        /* 图片样式 */
-        .log-image {
-            width: 100%;
-            border-radius: 4px;
-            margin: 1.5rem 0;
-            cursor: zoom-in;
-            transition: opacity 0.3s;
-        }
-        .log-image:hover { opacity: 0.9; }
-
-        .log-content h4 {
-            margin-top: 1.5rem;
-            font-size: 1.1rem;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 1rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-        }
-
-        .log-content h4:first-child { margin-top: 0; }
-
-        .log-content ul {
-            list-style: none;
-            padding: 0;
+        .hero-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 5rem;
+            line-height: 1.2;
             margin: 0;
-            color: #444;
+            writing-mode: vertical-rl; /* 竖排文字 */
+            letter-spacing: 0.1em;
         }
 
-        .log-content li {
-            margin-bottom: 0.6rem;
-            padding-left: 1.2rem;
-            position: relative;
+        .hero-subtitle {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: var(--sub-text);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
         }
 
-        .log-content li::before {
-            content: "∟";
-            position: absolute;
-            left: 0;
-            color: var(--sub-accent);
+        /* 内容板块 */
+        .section {
+            padding: 10rem 10%;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-num {
+            color: var(--accent-color);
             font-weight: bold;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--sub-text);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* 加入按钮 */
+        .cta-btn {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 1.2rem 3rem;
+            background: var(--text-color);
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent-color);
         }
 
         footer {
             padding: 4rem 10%;
-            background: #eee;
-            font-size: 0.85rem;
-            color: #666;
             text-align: center;
-            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+            color: var(--sub-text);
+            border-top: 1px solid #f0f0f0;
         }
 
+        /* 响应式 */
         @media (max-width: 768px) {
-            .header h1 { font-size: 2.5rem; }
-            .header { padding: 3rem 5% 1rem; }
-            .changelog-container { padding: 2rem 5% 5rem; }
-            .log-content { padding: 1.5rem; }
+            .hero-title { font-size: 3rem; }
+            nav { padding: 1.5rem 2rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
+
+
+
+
+
 <body>
 
     <nav>
-        <a href="#" class="nav-brand">梦想家园軌道交通</a>
-        <div style="font-size: 0.75rem; color: #888;">NETWORK OPERATION CENTER</div>
+        <div class="logo">梦想家园服务器</div>
+        <div class="nav-links">
+            <a href="#about">关于</a>
+            <a href="#features">特色</a>
+            <a href="railway.html">轨道交通</a>
+            <a href="changelog.html">更新日志</a>
+            <a href="#join">加入</a>
+        </div>
     </nav>
 
-    <header class="header">
-        <h1>路線更新</h1>
-        <span class="header-en">Route Update Log</span>
-    </header>
+    <div class="hero">
+        <div class="circle-decoration"></div>
+        <div class="hero-content">
+          <div style="
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    z-index: -100; 
+    overflow: hidden;">
+    
 
-    <main class="changelog-container">
+</div>
 
-        <!-- 更新条目：包含图片 -->
-        <article class="log-item">
-            <span class="log-date">2026.02.20</span>
-            <h2 class="log-version">站台翻新</h2>
-            <div class="log-content">
-                <!-- 插入图片示例 -->
-                <img src="https://images.unsplash.com" alt="路线图" class="log-image">
-                
-                <h4>[ 设施维护 ]</h4>
-                <ul>
-                    <li>芳木镇站 站台重建完成</li>
-                    <li>热海线 雷伽屯 站 暂停运营，拆除工程完工</li>
-                    
-                </ul>
+<div class="responsive-bg"></div>
 
-                <h4>[ 技术改造 ]</h4>
-                <ul>
-                    <li>环线 信号控制系统由GOA 1.0至1.1版本的热升级，并启动试运营。</li>
-                </ul>
-            </div>
-        </article>
+<style>
+.responsive-bg {
+    background-image: url('Pic1.png');
+    background-size: cover; /* 或 contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px; /* 固定高度或根据需要设置 */
+}
+</style>
 
-        <!-- 更新条目：常规文字 -->
-        <article class="log-item">
-            <span class="log-date">2025.12.15</span>
-            <h2 class="log-version">信号系统升级方案</h2>
-            <div class="log-content">
-                <h4>[ 技术改造 ]</h4>
-                <ul>
-                    <li>完成2号线信号控制系统由CBTC 1.0至2.5版本的热替换。</li>
-                    <li>高峰期列车最小行车间隔由120秒压缩至95秒。</li>
-                </ul>
-                <h4>[ 设施维护 ]</h4>
-                <ul>
-                    <li>更新了全线网142处轨道交叉道岔。</li>
-                    <li>旧城区地下区间隧道完成加固补漏工程。</li>
-                </ul>
-            </div>
-        </article>
-
-        <!-- 底部卷首语风格 -->
-        <div style="margin-top: 8rem; text-align: right; opacity: 0.7;">
-            <h3 style="font-family: 'Noto Serif SC', serif; font-weight: 300;">联结城市的每一条脉络</h3>
-            <p style="font-size: 0.9rem;">纵横交错的钢轨，是梦想延伸的方向。<br>无论深夜或清晨，我们准时守候您的归途。</p>
+            <h1 class="hero-title">梦中的世界</h1>
+            <p class="hero-subtitle">Dream Home Minecraft Server</p>
+            <a href="#join" class="cta-btn">开始探索</a>
         </div>
+    </div>
 
-    </main>
+    <section class="section" id="about">
+        <div class="section-header">
+            <span class="section-num">01 / CONCEPT</span>
+            <h2 class="section-title">A<br>B</h2>
+        </div>
+        <div style="max-width: 600px;">
+            <p style="line-height: 2; color: #555;">
+               小标题小标题小标题小标题小标题
+        </div>
+    </section>
+
+    <section class="section" id="features" style="background: #fff;">
+        <div class="section-header">
+            <span class="section-num">02 / FEATURES</span>
+            <h2 class="section-title">世界特色</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <h3>强大的后勤</h3>
+                <p>服里有很多红石大佬，机器遍地开花。实现了自给自足</p>
+            </div>
+            <div class="card">
+                <h3>大标题大标题大标题大标题大标题</h3>
+                <p>小标题小标题小标题小标题小标题</p>
+            </div>
+            <div class="card">
+                <h3>原生体验</h3>
+                <p>在保持原汁原味生存的基础上，加入防熊备份和快速潜影箱功能。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="join">
+        <div class="section-header">
+            <span class="section-num">03 / JOIN US</span>
+            <h2 class="section-title">加入我们</h2>
+        </div>
+        <div class="card">
+            <p>服务器地址: <code>play.craftmine188.top</code></p>
+            <p>版本支持: Java Edition 1.21.11</p>
+            <p>官方QQ交流群: 559182092</p>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 梦想家园轨道交通系统. 致力于提供卓越的出行体验.</p>
+        <p>&copy; 2026 Dream Home Server. Crafted with JimoWasTaken.</p>
     </footer>
 
 </body>
