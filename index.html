@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>梦想家园 | Dream Home Minecraft Server</title>
-    <!-- 引入字体 -->
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
     <style>
         :root {
             --bg-color: #fcfcfc;
@@ -59,14 +57,47 @@
             color: var(--accent-color);
         }
 
-        /* Hero 区域 */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 0 10%;
-            position: relative;
-        }
+/* 优化后的 Hero 区域 */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    /* 关键设置：背景图 */
+    background-image: linear-gradient(rgba(252, 252, 252, 0.4), rgba(252, 252, 252, 0.4)), url('/Server_files/20260301.png');
+    background-size: cover;      /* 自动裁切以覆盖整个区域 */
+    background-position: center; /* 始终居中对齐 */
+    background-attachment: fixed; /* 视差效果：滑动时背景固定，文字移动 */
+    overflow: hidden;
+}
+
+/* 针对手机端的优化 */
+@media (max-width: 768px) {
+    .hero {
+        /* 手机端通常不支持 background-attachment: fixed，将其设为 scroll 以保证流畅 */
+        background-attachment: scroll;
+        background-position: 70% center; /* 手机端如果想多露出一部分右侧风景，可以微调百分比 */
+        padding: 0 5%;
+    }
+    .hero-title { 
+        font-size: 3.5rem; 
+        writing-mode: vertical-rl; /* 保持竖排 */
+    }
+}
+
+/* 遮罩层效果，防止图片颜色太杂影响文字阅读 */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(252, 252, 252, 0.2); /* 淡淡的白色滤镜 */
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2; /* 确保内容在遮罩层之上 */
+}
 
         .hero-content {
             z-index: 2;
@@ -189,39 +220,15 @@
         </div>
     </nav>
 
-    <div class="hero">
-        <div class="circle-decoration"></div>
-        <div class="hero-content">
-          <div style="
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100vw; 
-    height: 100vh; 
-    z-index: -100; 
-    overflow: hidden;">
-    
-
+<div class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">梦中的世界</h1>
+        <p class="hero-subtitle">Dream Home Minecraft Server</p>
+        <a href="#join" class="cta-btn">开始探索</a>
+    </div>
 </div>
-
-<div class="responsive-bg"></div>
-
-<style>
-.responsive-bg {
-    background-image: url('Pic1.png');
-    background-size: cover; /* 或 contain */
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 300px; /* 固定高度或根据需要设置 */
-}
 </style>
 
-            <h1 class="hero-title">梦中的世界</h1>
-            <p class="hero-subtitle">Dream Home Minecraft Server</p>
-            <a href="#join" class="cta-btn">开始探索</a>
-        </div>
-    </div>
 
     <section class="section" id="about">
         <div class="section-header">
