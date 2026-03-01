@@ -200,6 +200,70 @@
             nav { padding: 1.5rem 2rem; }
             .nav-links { display: none; }
         }
+
+        /* 汉堡图标基础样式 */
+.menu-icon {
+    display: none; /* 默认电脑端隐藏 */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    z-index: 101;
+}
+
+.menu-icon span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-color);
+    transition: 0.3s;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex; /* 手机端显示图标 */
+    }
+
+    /* 手机端导航链接样式：全屏或侧滑层 */
+    .nav-links {
+        display: flex !important; /* 覆盖之前的 none */
+        position: fixed;
+        top: 0;
+        right: -100%; /* 初始状态隐藏在右侧外 */
+        width: 70%;
+        height: 100vh;
+        background: rgba(252, 252, 252, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+    }
+
+    .nav-links a {
+        margin: 1.5rem 0;
+        font-size: 1.2rem;
+    }
+
+    /* 当复选框被勾选时（点击图标），展开菜单 */
+    #menu-toggle:checked ~ .nav-links {
+        right: 0;
+    }
+
+    /* 动画效果：汉堡图标变 X */
+    #menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+        opacity: 0;
+    }
+    #menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
     </style>
 </head>
 
@@ -211,6 +275,15 @@
 
     <nav>
         <div class="logo">梦想家园服务器</div>
+
+        <input type="checkbox" id="menu-toggle" style="display: none;">
+    
+    <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
         <div class="nav-links">
             <a href="#about">关于</a>
             <a href="#features">特色</a>
