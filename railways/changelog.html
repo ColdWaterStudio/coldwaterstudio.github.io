@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更新日志 | 城市轨道交通系统</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --accent-color: #1a3a5a; /* 轨道交通常用的深蓝色 */
+            --sub-accent: #3498db;
+            --line-color: #d1d8e0;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.8;
+        }
+
+        /* 顶部导航 */
+        nav {
+            padding: 1.2rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--line-color);
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-brand {
+            font-family: 'Noto Serif SC', serif;
+            text-decoration: none;
+            color: var(--text-color);
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        /* 页面标题区 */
+        .header {
+            padding: 5rem 10% 2rem;
+            display: flex;
+            align-items: flex-end;
+            gap: 2rem;
+        }
+
+        .header h1 {
+            writing-mode: vertical-rl;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+        }
+
+        .header-en {
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            color: #aaa;
+            transform: rotate(90deg);
+            transform-origin: left bottom;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        /* 更新日志容器 */
+        .changelog-container {
+            padding: 2rem 10% 8rem;
+            max-width: 900px;
+        }
+
+        .log-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 6rem;
+            border-left: 2px solid var(--line-color);
+        }
+
+        /* 轨道节点效果 */
+        .log-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border: 4px solid var(--accent-color);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .log-date {
+            font-size: 1rem;
+            color: var(--sub-accent);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+            font-family: monospace;
+        }
+
+        .log-version {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2rem;
+            margin: 0 0 1.5rem 0;
+            color: var(--accent-color);
+        }
+
+        .log-content {
+            background: #fff;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        /* 图片样式 */
+        .log-image {
+            width: 100%;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+            cursor: zoom-in;
+            transition: opacity 0.3s;
+        }
+        .log-image:hover { opacity: 0.9; }
+
+        .log-content h4 {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .log-content h4:first-child { margin-top: 0; }
+
+        .log-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #444;
+        }
+
+        .log-content li {
+            margin-bottom: 0.6rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .log-content li::before {
+            content: "∟";
+            position: absolute;
+            left: 0;
+            color: var(--sub-accent);
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 4rem 10%;
+            background: #eee;
+            font-size: 0.85rem;
+            color: #666;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
+            .header { padding: 3rem 5% 1rem; }
+            .changelog-container { padding: 2rem 5% 5rem; }
+            .log-content { padding: 1.5rem; }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-brand">梦想家园軌道交通</a>
+        <div style="font-size: 1rem; color: #888;"> </div>
+    </nav>
+
+    <header class="header">
+        <h1>更新日志</h1>
+
+        <!-- 线网图区域 
+<section class="network-map-section">
+    <div class="map-wrapper">
+        <div class="map-container" title="点击查看详情"></div>
+        
+        <img src="Server_files/202604线网图.webp" style="width:120%; display:block;"> 
+    
+    </div> 
+    
+    <div class="map-caption">
+        <div>
+            <span class="map-tag">VER 2026.02</span>
+            <span>当前运营线路：6条 | 运营里程：9km</span> -->
+     <!--        <span>运营一分公司：Jimowastaken</span>
+            <span>运营二分公司：Tangzhuqx</span>        -->
+        </div>
+    </div> 
+</section>
+
+    <!--    <span class="header-en">Route Update Log</span> -->
+    </header>
+
+
+    <main class="changelog-container">
+
+                                <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2026.04.02</span>
+            <h2 class="log-version">设备升级</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/20260402.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 芳木镇 站 ]</h4>
+                <ul>
+                    <li>电动检票机启用</li>
+                </ul>
+        </article>
+        
+                                <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2026.03.14</span>
+            <h2 class="log-version">车站开通</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/20260314.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 环线 ]</h4>
+                <ul>
+                    <li>临港 站 临时站前折返 改为非折返进站</li>
+                    <li>临港 站 正式常态化开通</li>
+                    <li>环线 新临港 站 区间复线化完工</li>
+                </ul>
+        </article>
+        
+                                <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2026.03.13</span>
+            <h2 class="log-version">站台重修</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/20260313.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 热海线 ]</h4>
+                <ul>
+                    <li>热海线 热海新城站 站台翻新+扩编5节长度</li>
+                    <li>因进站速度需求提升，由岛式站台改为双岛式站台</li>
+                </ul>
+        </article>
+        
+                                <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2026.03.05</span>
+            <h2 class="log-version">设备更新</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/20260306.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 热海线 ]</h4>
+                <ul>
+                    <li>热海线 猫交易所站 电动屏蔽门安装调试完成</li>
+                </ul>
+        </article>
+        
+                                <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2026.03.05</span>
+            <h2 class="log-version">施工进度</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/20260305.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 热海线三期延伸 ]</h4>
+                <ul>
+                    <li>热海线 芳木镇站 站台基础施工完成</li>
+                    <li>热海线 芳木镇站 上行线土建完工</li>
+                </ul>
+        </article>
+
+                        <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2026.03.01</span>
+            <h2 class="log-version">车站开通</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/20260301.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 轨道拓宽 ]</h4>
+                <ul>
+                    <li>环线 后山 至 老交易所 区间盾构完工（感谢@mrcageman366盾构）</li>
+                    <li>后山站开通</li>
+                    <li>后山站 站后折返线拆除</li>
+                </ul>
+        </article>
+
+                <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2026.02.28</span>
+            <h2 class="log-version">施工改造</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/20260228.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 轨道拓宽 ]</h4>
+                <ul>
+                    <li>环线 金台夕照站 至 老交易所站 区间 轨道拓宽工程完工</li>
+                    <li>部分弯道额外加宽，并加装护栏</li>
+                    
+                </ul>
+        </article>
+
+                <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2026.02.27</span>
+            <h2 class="log-version">施工改造</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/20260227.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 施工改造 ]</h4>
+                <ul>
+                    <li>环线 金台夕照站 至 花海站 区间 线路入地工程完工（总耗时半年）</li>
+                    <li>地表土层还原填埋工程完工</li>
+                    
+                </ul>
+        </article>
+
+        <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2026.02.20</span>
+            <h2 class="log-version">站台翻新</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/20260220A.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 设施维护 ]</h4>
+                <ul>
+                    <li>芳木镇站 站台重建完成</li>
+                    <li>热海线 雷伽屯 站 暂停运营，拆除工程完工</li>
+                    
+                </ul>
+
+                <h4>[ 技术改造 ]</h4>
+                <ul>
+                    <li>环线 信号控制系统由GOA 1.0至1.1版本的热升级，并启动空载试运营。</li>
+                </ul>
+            </div>
+        </article>
+
+                <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2026.02.28</span>
+            <h2 class="log-version">规划图公开</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/2025Q1规划.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 2025Q1规划 ]</h4>
+                <ul>
+                    <li>规划不代表实际建设</li>                    
+                </ul>
+        </article>
+
+
+                <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2025.02.04</span>
+            <h2 class="log-version">复线化！</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/2025-02-04.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 技术改造 ]</h4>
+                <ul>
+                    <li>中央线复线化完工</li>
+                    <li>货运列车为主，客运交替运行</li>
+                    <li>图中的多条轨道为：不同线路的远期预留</li>
+               </ul>
+            </div>
+        </article>
+
+                <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2025.02.03</span>
+            <h2 class="log-version">单线开通</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/2025-02-03.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 车站开通 ]</h4>
+                <ul>
+                    <li>中央线 中央站与新宿站投入单线运营</li>
+
+               </ul>
+            </div>
+        </article>
+
+                <!-- 更新条目：包含图片 -->
+        <article class="log-item">
+            <span class="log-date">2025.01.26</span>
+            <h2 class="log-version">车站开通</h2>
+            <div class="log-content">
+                <!-- 插入图片示例 -->
+                <img src="assets/2025-01-26.webp" alt="路线图" class="log-image">
+                
+                <h4>[ 车站开通 ]</h4>
+                <ul>
+                    <li>中央线 新宿站主体部分完工</li>
+                    <li>一切的起点。</li>
+                    
+                </ul>
+            </div>
+        </article>
+
+        <!-- 更新条目：常规文字 
+        <article class="log-item">
+            <span class="log-date">2026.?</span>
+            <h2 class="log-version">还没写完</h2>
+            <div class="log-content">
+                <h4>[ 技术改造 ]</h4>
+                <ul>
+                    <li>明天早上增加以前的日志</li>
+                    <li>好困好困好困好困</li>
+                </ul>
+                <h4>[ 设施维护 ]</h4>
+                <ul>
+                    <li>补充：</li>
+                    <li>好饿好饿好饿好饿</li>
+                </ul>
+            </div>
+        </article>  -->
+        
+
+        <!-- 底部卷首语风格 
+        <div style="margin-top: 8rem; text-align: right; opacity: 0.7;">
+            <h3 style="font-family: 'Noto Serif SC', serif; font-weight: 300;">联结城市的每一条脉络</h3>
+            <p style="font-size: 0.9rem;">纵横交错的钢轨，是梦想延伸的方向。<br>无论深夜或清晨，我们准时守候您的归途。</p>
+        </div>  -->
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 梦想家园我的世界服务器.</p>
+    </footer>
+
+</body>
+</html>
